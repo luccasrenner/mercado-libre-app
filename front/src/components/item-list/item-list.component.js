@@ -12,8 +12,6 @@ class ItemList extends React.Component{
             elementList: [],
             categories: []
         }
-        //Function that gets the props of the selected product and sends it to the parent component to share with the product view (Avoiding an unnecessary API request)
-        function getProps(_props) {  this.props.productHandle(_props) }
         //Get URL Search Parameter and execute the API request
         var query = new URLSearchParams(window.location.search).get('search');
         var url = "http://localhost:3333/api/items?q="+query;
@@ -37,7 +35,7 @@ class ItemList extends React.Component{
                         picture={data_mapped.picture}
                         condition={data_mapped.condition}
                         free_shipping={data_mapped.free_shipping}
-                        getProps = {getProps.bind(this)}
+                        direction={data_mapped.direction}
                     />
                 )
             })

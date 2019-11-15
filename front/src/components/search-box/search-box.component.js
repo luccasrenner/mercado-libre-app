@@ -15,15 +15,11 @@ class SearchBox extends React.Component {
         this.handleValue = this.handleValue.bind(this);
     }
     //Update text value
-    handleValue(e){
-        this.setState({
-            textoInput: e.target.value
-        })
-    }
-    //Submit the search if Enter keydown
+    handleValue(e){ this.setState({ textoInput: e.target.value }) }
+    //Submit the search if Enter keydown on home page or in view of a product
     submitSearch(e){
         if(e.key === "Enter"){
-            if(window.location.pathname === "/"){
+            if(window.location.pathname === "/" || !!window.location.pathname.split('/items/')[1]){
                 window.location.href = `/items?search=${this.state.textoInput}`;
             }else{
                 window.history.pushState('','',`/items?search=${this.state.textoInput}`);
@@ -32,20 +28,14 @@ class SearchBox extends React.Component {
         }
     }
     //Send search to the list view
-    sendTextValue(){
-        this.props.searchHandle(this.state.textoInput);
-    }
+    sendTextValue(){ this.props.searchHandle(this.state.textoInput); }
     //When the component is assembled it will take the query and put as input value
     componentDidMount(){
         var query = new URLSearchParams(window.location.search).get('search');
-        if(this.state.textoInput === "" && query != null){
-            this.setState({
-                textoInput: query
-            })
-        }
+        if(this.state.textoInput === "" && query != null){ this.setState({ textoInput: query }); }
     }
     render(){
-        var urlValue = "/items?search="+this.state.textoInput
+        var urlValue = "/items?search="+this.state.textoInput;
         return(
             <header>
                 <Helmet>

@@ -6,47 +6,55 @@ import {Helmet} from "react-helmet";
 class ItemPreview extends React.Component {
     constructor(props){
         super(props);
-        this.parent_productData_return = this.props.data || {
-            "id": "",
-            "title": "",
-                "price": {
-                            "currency": "",
-                            "amount": "",
-                            "decimals": ""
-                },
-            "picture": "",
-            "condition": "",
-            "free_shipping": ""
-        };
+        this.id = window.location.pathname.replace('/items/','');
         this.state = {
-            data : this.parent_productData_return
-        }
-        if(!!!this.state.data.id){   
-            fetch("http://localhost:3333/api/items/"+window.location.pathname.replace('/items/',''))
-            .then(response => {
-                return response.json()
-            })
-            .then( data => {
-                this.setState({
-                    data: data.items[0]
-                });
-                
-            })
-            .catch( e => console.log(e) )
+            id: "",
+            title: "",
+            category: [],
+            price: {
+                currency: "",
+                amount: "",
+                decimals: "",
+            },
+            picture: "",
+            condition: "",
+            free_shipping: "",
+            sold_quantity: "",
+            description: ""
         }
     }
+    componentWillMount(){
+        fetch(`http://localhost:3333/api/items/${this.id}`)
+        .then( jsonData => jsonData.json() )
+        .then( data => {
+            this.setState({
+                title: data.title,
+                category: data.categories,
+                price: {
+                    currency: data.price.currency,
+                    amount: data.price.amount,
+                    decimals: data.price.decimals
+                },
+                picture: data.picture[0].url,
+                condition: data.condition,
+                free_shipping: data.free_shipping,
+                sold_quantity: data.sold_quantity,
+                description: data.description
+            });
+        } )
+        .catch( console.log )
+    }
     render() {
-        console.log(this.props)
-        var thumbnail = this.state.data.picture;
+        var thumbnail = this.state.picture;
         return(
             <React.Fragment>
                 <Helmet>
-                    <title> {this.state.data.title} -  en Mercado Libre</title>
+                    <title> {this.state.title} -  en Mercado Libre</title>
                 </Helmet>
                 <div className="container-fluid item_list_nav">
                     <div className="row">
                         <div className="col-10 offset-1 pl-0">
-                            <CategoryNavbar category={this.props.data.category} />
+                            <CategoryNavbar category={this.state.category} />
                         </div>
                     </div>
                     <div className="row product-line">
@@ -59,14 +67,14 @@ class ItemPreview extends React.Component {
 
                             <div className="product-detail col-md-3">
                                 <p className="state_of_product">Nuevo - 254 vendidos</p>
-                                <h1 className="title">{this.state.data.title}</h1>
-                                <h2 className="price">$ {this.state.data.price.amount}</h2>
+                                <h1 className="title">{this.state.title}</h1>
+                                <h2 className="price">$ {this.state.price.amount}</h2>
                                 <a className="btn btn-primary shipping-btn">Comprar</a>
                             </div>
                             <div className="product-description col-md-8">
                                 <h3>Descripcion de producto</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    {this.state.description}
                                 </p>
                             </div>
                         </div>

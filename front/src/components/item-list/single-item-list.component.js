@@ -1,53 +1,34 @@
 import React from 'react';
 import './single-item-list.component.scss';
 import { Link } from "react-router-dom";
-
-
+//SingleItemList Class
 class SingleItemList extends React.Component{
-    constructor(props){
-        super(props);
-    }
-    
+    constructor(props){ super(props); }
     render(){
         var thumbnail = this.props.picture;
         var url = "/items/"+this.props.id;
-        const returnProps = () =>{
-            this.props.getProps(this.props)
-        }
-        console.log()
-        
+       
         if (this.props.free_shipping) {
-            var FreeShipping = (
-                                    <div className="shippingItem"></div>
-                                );
+            var FreeShipping = ( <div className="shippingItem"></div>  );
         }
-        
         return(
             <div className="item_element row" >
                 <Link to={`/items/${this.props.id}`}>
-                    <div className="item_element_thumbnail" onClick={returnProps} style={
-                        {
-                            backgroundImage: 'url('+thumbnail+')'
-                        }
-                    }></div>  
+                    <div className="item_element_thumbnail" style={{backgroundImage: 'url('+thumbnail+')'}}></div>  
                 </Link>  
-
                 <div className="col-12 col-md-4">
                     <Link to={`/items/${this.props.id}`}>
                         <h3 className="item_element_price">${this.props.price.decimals}</h3>
                         {FreeShipping}
                     </Link>
-                    <p className="description">
-                        {this.props.title}
-                    </p>
+                    <p className="description"> {this.props.title} </p>
                 </div>
                 <div className="col-12 offset-md-2 col-md-2">
-                    <small className="address">Capital Federal</small>
+                    <small className="address">{this.props.direction}</small>
                 </div>
             </div>
             
         );
     }
 }
-
 export default SingleItemList;

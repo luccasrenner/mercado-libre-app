@@ -15,27 +15,12 @@ class App extends Component {
     };
     //Function bind
     this.searchHandle = this.searchHandle.bind(this);
-    this.productHandle = this.productHandle.bind(this);
     this.categoriesHandle = this.categoriesHandle.bind(this); 
   }
-  //Function to keep the product data to the 
-  productHandle(_props){
-    this.setState({
-      product: _props
-    })
-  }
   //Function to keep a product date and avoid unnecessary API Requests
-  searchHandle(_props){
-    this.setState({
-      search: _props
-    })
-  }
+  searchHandle(_props){ this.setState({ search: _props }) }
   //function to persist the status of the category bar
-  categoriesHandle(_props){
-    this.setState({
-      categories: _props
-    })
-  }
+  categoriesHandle(_props){ this.setState({ categories: _props }) }
   //Render with React Router and state persistence functions
   render(){
     return (
