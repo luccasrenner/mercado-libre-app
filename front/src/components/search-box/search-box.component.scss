@@ -1,0 +1,49 @@
+//Block, Element, Modifier methodology
+
+//Import general
+@import '../../index.scss';
+
+header{
+    background: $primary-color;
+}
+.nav_bounds{
+    a{
+        @include outline-inputs;
+    }
+    .nav_bounds_logo{
+        margin-top: 4px;
+        @media (max-width: 768px) {
+            margin-left: 15px;
+        }
+    }
+    
+    padding: 10px 0;
+    input{
+        @include outline-inputs;
+        font-size: 18px;
+        border: none;
+        &active, &focus{
+            border: none; 
+        }
+    }
+    .nav_bounds_action_button_box{
+        border: none;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        padding: 0
+    }
+    .nav_bounds_action_button{
+        background-image: url('http://localhost:3000/assets/_img/icon/ic_Search@2x.png.png');
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 20px;
+        height: 29px;
+        margin-left: -1px;
+        @include outline-inputs;
+        &:focus{ @include outline-inputs; }
+        &:active{ @include outline-inputs; }
+    }
+}

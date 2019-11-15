@@ -1,0 +1,20 @@
+@import '../../index.scss';
+
+.nav{
+    a{
+        padding: $primary-space 17px $primary-space 0;
+        font-size: 14px;
+        color: $gray-light;
+        &:not(:last-child):after{
+            content: '>';
+            margin: 0px 0px 0 5px;
+            position: absolute;
+        }
+        &:first-child{
+            padding-left: 0;
+        }
+        &:last-child{
+            color: $gray-medium;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@import '../../index.scss';
+
+.product-preview{
+    background: #ffffff;
+    @media (max-width: 768px) {
+        *{
+            text-align: center;
+        }
+    }
+    .thumbnail{
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 600px;
+    }
+    .product-detail {
+        .state_of_product {
+            font-size: 14px;
+        }
+        @media (min-width: 768px) {
+            padding: $secondary-space 0;
+        }
+        *{
+            margin: 0
+        }
+        .title{
+            padding: $primary-space 0 0 0;
+            font-size: 24px;
+            @media (min-width: 768px) {
+                margin-right: $secondary-space;
+            }
+        }
+        .price{
+            font-size: 46px;
+            padding: $secondary-space 0 $secondary-space 0
+        }
+        .shipping-btn{
+            color:#ffffff;
+            display: block;
+            padding: 14px 0;
+            @media (min-width: 768px) {
+                margin-right: $secondary-space;
+                margin: auto;
+            }
+            &:hover{
+                color: #ffffff;
+            }
+        }
+    }
+    .product-description{
+        margin-top: 200px;
+        padding-left: $secondary-space;
+        *{
+            margin: 0;
+        }
+        h3{
+            font-size: 28px;
+            color: $gray-dark;
+            font-weight: 500;
+        }
+        p {
+            $color: $gray-medium;
+            padding: $secondary-space 0
+        }
+    }
+}

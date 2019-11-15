@@ -1,0 +1,60 @@
+@import '../../index.scss';
+.item_element{
+    padding: $primary-space;
+    box-shadow: 0 1px 3px -3px $gray-dark;
+    a{
+        @media (max-width: 768px) {
+            display: block;
+            margin: auto;
+        }
+        .item_element_thumbnail{
+            height: 180px;
+            width: 180px;
+            background-size: cover;
+            background-position: center;
+            
+        }
+    }
+    
+    a {
+        text-decoration: none;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    h3.item_element_price{
+        font-size: $font-gigant;
+        color: $gray-dark;
+        padding: 16px 0 32px 0;
+        display: inline-block;
+    }
+    .shippingItem{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url('/assets/_img/icon/ic_shipping.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-left: 10px;
+        margin-bottom: -0.5px;
+        border-radius: 100%;
+    }
+    p.description{
+        font-size: $font-big;
+    }
+    .address{
+        font-size: $font-small;
+        padding-top: 68px;
+        display: block;
+    }
+    @media( max-width: 768px){
+        .item_element_thumbnail{
+            margin: auto;
+        }
+        text-align: center;
+        .address{
+            padding-top: 0;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+//Global
+*{
+  font-family: 'Lato', sans-serif;
+}
+body{ 
+  margin: 0; 
+  background-color: #EEEEEE;
+  color: #333333;
+}
+#root{
+  max-width: 100vw;
+  overflow: hidden;
+}
+//Colors
+$primary-color: #FFE600;
+$gray-dark: #333333;
+$gray-medium: #666666;
+$gray-light: #999999;
+$blue: #3483FA;
+//Paddings and Margins
+$primary-space: 16px;
+$secondary-space: 32px;
+//Fonts size
+$font-small: 12px;
+$font-medium: 14px;
+$font-big: 18px;
+$font-gigant: 24px;
+//Mixins
+@mixin outline-inputs {
+  outline: none!important;
+  box-shadow: none!important;
+}
