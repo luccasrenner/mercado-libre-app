@@ -10,6 +10,4 @@ app.use(router);
 //Use json response
 app.use(express.json());
 //Listen App
-app.listen(3333, () => {
-    console.log("----> live on:: http://localhost:3333");
-})
+app.listen(3333, () => { console.log("----> live on:: http://localhost:3333"); })

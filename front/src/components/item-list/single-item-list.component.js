@@ -7,10 +7,7 @@ class SingleItemList extends React.Component{
     render(){
         var thumbnail = this.props.picture;
         var url = "/items/"+this.props.id;
-       
-        if (this.props.free_shipping) {
-            var FreeShipping = ( <div className="shippingItem"></div>  );
-        }
+        if (this.props.free_shipping) { var FreeShipping = ( <div className="shippingItem"></div>  ); }
         return(
             <div className="item_element row" >
                 <Link to={`/items/${this.props.id}`}>

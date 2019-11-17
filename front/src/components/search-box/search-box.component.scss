@@ -1,19 +1,8 @@
-//Block, Element, Modifier methodology
-
 //Import general
 @import '../../index.scss';
-
 header{
     background: $primary-color;
     position: relative;
-    &::after{
-        content: '';
-        position: absolute;
-        bottom: 0;
-        width: 100vw;
-        height: 5px;
-        background-color: $gray-dark;
-    }
 }
 .nav_bounds{
     a{
@@ -25,7 +14,6 @@ header{
             margin-left: 0px;
         }
     }
-    
     padding: 10px 0;
     input{
         @include outline-inputs;

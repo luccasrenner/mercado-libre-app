@@ -5,7 +5,7 @@ var app = express();
 var cors = require('cors');
 app.use(cors());
 var router = express.Router();
-const { querySearch, queryPreview, queryPreviewDescription } = require('./controllers/search/search.controller');
+const { querySearch, queryPreview } = require('./controllers/search/search.controller');
 //Set Routers
 router.get('/api/items', querySearch);
 router.get('/api/items/:id', queryPreview);

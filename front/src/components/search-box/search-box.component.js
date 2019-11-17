@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import './search-box.component.scss';
 //Import Helmet for head tag maintenance
 import {Helmet} from "react-helmet";
@@ -21,9 +21,7 @@ class SearchBox extends React.Component {
         if(e.key === "Enter"){
             if(window.location.pathname === "/" || !!window.location.pathname.split('/items/')[1]){
                 window.location.href = `/items?search=${this.state.textoInput}`;
-            }else{
-                window.history.pushState('','',`/items?search=${this.state.textoInput}`);
-            }
+            }else{ window.history.pushState('','',`/items?search=${this.state.textoInput}`); }
             //Send state to parent element
             this.props.searchHandle(this.state.textoInput);
         }

@@ -1,4 +1,4 @@
-const https = require('https')
+const https = require('https');
 function GETRequest(_url = '') {
     return new Promise( (resolve, reject) => {
         https.get(_url, res => {
@@ -6,13 +6,9 @@ function GETRequest(_url = '') {
             // Build response body in a string
             var resBody = '';
             // Listen for data and add
-            res.on('data', function (chunk) {
-                resBody += chunk
-            });
+            res.on('data', function (chunk) { resBody += chunk; });
             //Resolve data
-            res.on("end", () => {
-                resolve(resBody);
-            });
+            res.on("end", () => { resolve(resBody); });
         });
     } )
 }

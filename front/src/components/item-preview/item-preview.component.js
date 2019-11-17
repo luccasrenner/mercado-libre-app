@@ -59,7 +59,7 @@ class ItemPreview extends React.Component {
                         </div>
                     </div>
                     <div className="row product-line">
-                        <div className="col-10 offset-1 product-preview row">
+                        <div className="col-10 offset-1 product-preview row mb-5">
                            <div className="thumbnail col-md-8" style={{backgroundImage: 'url('+thumbnail+')'}}></div> 
                             <div className="product-detail col-md-3">
                                 <p className="state_of_product">Nuevo - 254 vendidos</p>
