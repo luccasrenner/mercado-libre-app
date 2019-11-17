@@ -5,6 +5,15 @@
 
 header{
     background: $primary-color;
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
+        height: 5px;
+        background-color: $gray-dark;
+    }
 }
 .nav_bounds{
     a{
@@ -13,7 +22,7 @@ header{
     .nav_bounds_logo{
         margin-top: 4px;
         @media (max-width: 768px) {
-            margin-left: 15px;
+            margin-left: 0px;
         }
     }
     

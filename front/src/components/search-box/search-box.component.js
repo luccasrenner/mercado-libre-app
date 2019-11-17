@@ -24,12 +24,13 @@ class SearchBox extends React.Component {
             }else{
                 window.history.pushState('','',`/items?search=${this.state.textoInput}`);
             }
+            //Send state to parent element
             this.props.searchHandle(this.state.textoInput);
         }
     }
     //Send search to the list view
     sendTextValue(){ this.props.searchHandle(this.state.textoInput); }
-    //When the component is assembled it will take the query and put as input value
+    //when the page is loaded in the context of direct access to the list page (when it was not the user who performed the search), when the component is assembled it will take the query and put as input value
     componentDidMount(){
         var query = new URLSearchParams(window.location.search).get('search');
         if(this.state.textoInput === "" && query != null){ this.setState({ textoInput: query }); }
@@ -44,12 +45,12 @@ class SearchBox extends React.Component {
                 </Helmet>
                 <div className="container-fluid nav_bounds">
                     <div className="row">
-                        <div className="col-2 offset-md-1 col-md-1">
+                        <div className="col-2 offset-1 offset-md-1 col-md-1 pr-md-0">
                             <Link to={'/'}>
                                 <img className="img-fluid nav_bounds_logo" src="http://localhost:3000/assets/_img/logo/Logo_ML.png" alt="Mercado Libre Logo"/>
                             </Link>
                         </div>
-                        <div className="col-9 col-md-9">
+                        <div className="col-8 col-md-9 p-md-0">
                             <div className="input-group">
                                 <input onKeyDown={this.submitSearch} onChange={this.handleValue} value={this.state.textoInput} type="text" className="form-control" placeholder="Nunca dejes de buscar" />
                                 <div className="input-group-prepend">

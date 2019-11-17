@@ -2,7 +2,7 @@ import React from 'react';
 import './item-preview.component.scss';
 import CategoryNavbar from '../category-navbar/category-navbar.component';
 import {Helmet} from "react-helmet";
-
+//ItemPreview class
 class ItemPreview extends React.Component {
     constructor(props){
         super(props);
@@ -23,6 +23,7 @@ class ItemPreview extends React.Component {
             description: ""
         }
     }
+    //Get the api data from the product preview
     componentWillMount(){
         fetch(`http://localhost:3333/api/items/${this.id}`)
         .then( jsonData => jsonData.json() )
@@ -59,12 +60,7 @@ class ItemPreview extends React.Component {
                     </div>
                     <div className="row product-line">
                         <div className="col-10 offset-1 product-preview row">
-                           <div className="thumbnail col-md-8" style={
-                               {
-                                backgroundImage: 'url('+thumbnail+')'
-                                }
-                            }></div> 
-
+                           <div className="thumbnail col-md-8" style={{backgroundImage: 'url('+thumbnail+')'}}></div> 
                             <div className="product-detail col-md-3">
                                 <p className="state_of_product">Nuevo - 254 vendidos</p>
                                 <h1 className="title">{this.state.title}</h1>
@@ -73,9 +69,7 @@ class ItemPreview extends React.Component {
                             </div>
                             <div className="product-description col-md-8">
                                 <h3>Descripcion de producto</h3>
-                                <p>
-                                    {this.state.description}
-                                </p>
+                                <p> {this.state.description} </p>
                             </div>
                         </div>
                     </div>
