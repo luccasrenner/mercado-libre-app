@@ -1,7 +1,10 @@
 @import '../../index.scss';
 .item_element{
     padding: $primary-space;
-    box-shadow: 0 1px 3px -3px $gray-dark;
+    box-shadow: 1px 3px 1px -3px $gray-dark;
+    *{
+        margin: 0;
+    }
     a{
         @media (max-width: 768px) {
             display: block;
@@ -12,7 +15,7 @@
             width: 180px;
             background-size: cover;
             background-position: center;
-            
+            border-radius: 4px;
         }
     }
     
@@ -27,6 +30,9 @@
         color: $gray-dark;
         padding: 16px 0 32px 0;
         display: inline-block;
+        @media (max-width: 768px) {
+            padding-bottom: 11px;            
+        }
     }
     .shippingItem{
         display: inline-block;

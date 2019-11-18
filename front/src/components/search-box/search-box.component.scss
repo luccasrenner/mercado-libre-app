@@ -29,7 +29,8 @@ header{
         border-bottom-left-radius: 0px;
         border-top-right-radius: 3px;
         border-bottom-right-radius: 3px;
-        padding: 0
+        padding: 0;
+        background: $gray;
     }
     .nav_bounds_action_button{
         background-image: url('http://localhost:3000/assets/_img/icon/ic_Search@2x.png.png');

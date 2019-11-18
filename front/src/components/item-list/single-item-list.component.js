@@ -13,18 +13,17 @@ class SingleItemList extends React.Component{
                 <Link to={`/items/${this.props.id}`}>
                     <div className="item_element_thumbnail" style={{backgroundImage: 'url('+thumbnail+')'}}></div>  
                 </Link>  
-                <div className="col-12 col-md-4">
+                <div className="col-12 col-md-7 col-lg-8">
                     <Link to={`/items/${this.props.id}`}>
                         <h3 className="item_element_price">${this.props.price.decimals}</h3>
                         {FreeShipping}
                     </Link>
                     <p className="description"> {this.props.title} </p>
                 </div>
-                <div className="col-12 offset-md-2 col-md-2">
+                <div className="col-12 col-md-1">
                     <small className="address">{this.props.direction}</small>
                 </div>
             </div>
-            
         );
     }
 }

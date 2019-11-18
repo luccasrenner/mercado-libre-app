@@ -13,6 +13,8 @@
         background-repeat: no-repeat;
         min-height: 600px;
         margin-top: $secondary-space;
+        width: 680px;
+        max-width: 100%;
     }
     .product-detail {
         .state_of_product {
@@ -27,6 +29,7 @@
         .title{
             padding: $primary-space 0 0 0;
             font-size: 24px;
+            font-weight: 700;
             @media (min-width: 768px) {
                 margin-right: $secondary-space;
             }

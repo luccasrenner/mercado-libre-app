@@ -8,7 +8,7 @@ class CategoryNavbar extends React.Component{
             <nav className="nav">
                 {
                     this.props.category.map( e => {
-                        return( <a key={e} className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">{e}</a> )
+                        return( <a key={e} className="nav-link" href="#" tabIndex="-1" aria-disabled="true">{e}</a> )
                     } )
                 }
             </nav>
