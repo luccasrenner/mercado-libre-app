@@ -25,7 +25,7 @@ class ItemPreview extends React.Component {
     }
     //Get the api data from the product preview
     componentWillMount(){
-        fetch(`http://localhost:3333/api/items/${this.id}`)
+        fetch(`/api/items/${this.id}`)
         .then( jsonData => jsonData.json() )
         .then( data => {
             this.setState({
@@ -59,9 +59,11 @@ class ItemPreview extends React.Component {
                         </div>
                     </div>
                     <div className="row product-line">
-                        <div className="col-10 offset-1 product-preview row mb-5">
-                           <div className="thumbnail" style={{backgroundImage: 'url('+thumbnail+')'}}></div> 
-                            <div className="product-detail col-12 col-md-3 offset-md-1">
+                        <div className="col-10 offset-1 product-preview row">
+                            <div className="col-md-8 text-center">
+                                <img className="img-fluid w-100" src={thumbnail} />
+                            </div>
+                            <div className="product-detail col-md-3">
                                 <p className="state_of_product">Nuevo - 254 vendidos</p>
                                 <h1 className="title">{this.state.title}</h1>
                                 <h2 className="price">$ {this.state.price.amount}</h2>
@@ -74,7 +76,6 @@ class ItemPreview extends React.Component {
                         </div>
                     </div>
                 </div>
-                
             </React.Fragment>
         );
     }

@@ -1,6 +1,9 @@
+//Block, Element, Modifier methodology
+
 //Import general
 @import '../../index.scss';
-header{
+
+#header{
     background: $primary-color;
     position: relative;
 }
@@ -14,6 +17,7 @@ header{
             margin-left: 0px;
         }
     }
+    
     padding: 10px 0;
     input{
         @include outline-inputs;
@@ -29,8 +33,7 @@ header{
         border-bottom-left-radius: 0px;
         border-top-right-radius: 3px;
         border-bottom-right-radius: 3px;
-        padding: 0;
-        background: $gray;
+        padding: 0
     }
     .nav_bounds_action_button{
         background-image: url('http://localhost:3000/assets/_img/icon/ic_Search@2x.png.png');

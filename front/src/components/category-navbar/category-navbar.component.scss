@@ -5,24 +5,16 @@
         padding: $primary-space 17px $primary-space 0;
         font-size: 14px;
         color: $gray-light;
-        position: relative;
         &:not(:last-child):after{
-            content: '';
+            content: '>';
             margin: 0px 0px 0 5px;
             position: absolute;
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background: url(/assets/_img/icon/arrow-right.svg);
-            top: 21px;
-            right: 3px;
         }
         &:first-child{
             padding-left: 0;
         }
         &:last-child{
             color: $gray-medium;
-            font-weight: 700;
         }
     }
 }

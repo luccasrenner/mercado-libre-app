@@ -14,13 +14,15 @@ class ItemList extends React.Component{
         }
         //Get URL Search Parameter and execute the API request
         var query = new URLSearchParams(window.location.search).get('search');
-        var url = "http://localhost:3333/api/items?q="+query;
+        var url = "/api/items?q="+query;
         fetch(url)
         .then( results => {
             return results.json();
         })
         .then( data => {
-            this.setState({ categories : data.categories }) 
+            this.setState({
+                categories : data.categories
+            }) 
             //Create a list of item components
             var data_list = data.items.map((data_mapped) => {
                 return(
@@ -40,6 +42,8 @@ class ItemList extends React.Component{
             //Perform a change of element list state
             this.setState({elementList : data_list});
         })
+        //Send categories to parent element
+        //this.props.categoriesHandle(this.state.categories);
     }
     //Render Function
     render() {
@@ -57,7 +61,7 @@ class ItemList extends React.Component{
                         <div className="col-10 offset-1 pl-0">
                             <CategoryNavbar category={currentCategory} />
                         </div>
-                        <div className="item_list_body col-10 offset-1 mb-5">
+                        <div className="item_list_body col-10 offset-1">
                             {this.state.elementList}
                         </div>
                     </div>

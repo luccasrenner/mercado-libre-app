@@ -25,9 +25,9 @@ class App extends Component {
   render(){
     return (
         <Router>
-          <Route path="/" component={ () =>  <SearchBox searchHandle={ this.searchHandle }  inputValue={ this.state.search } />  } />
-          <Route exact path="/items" component={ () => <ItemList categoriesHandle={ this.categoriesHandle } productHandle={ this.productHandle } /> }   />
-          <Route path="/items/:id" component={ () =>  <ItemPreview  categories={ this.state.categories } data={ this.state.product } /> } />
+          <Route path="/" component={ () =>  <SearchBox searchHandle={this.searchHandle }  inputValue={this.state.search} />  } />
+          <Route exact path="/items" component={() => <ItemList categoriesHandle={this.categoriesHandle} productHandle={this.productHandle} />}   />
+          <Route path="/items/:id" component={ () =>  <ItemPreview  categories={this.state.categories} data={this.state.product} /> } />
         </Router>
     );
   }

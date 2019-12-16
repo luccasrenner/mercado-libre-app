@@ -7,23 +7,27 @@ class SingleItemList extends React.Component{
     render(){
         var thumbnail = this.props.picture;
         var url = "/items/"+this.props.id;
-        if (this.props.free_shipping) { var FreeShipping = ( <div className="shippingItem"></div>  ); }
+       
+        if (this.props.free_shipping) {
+            var FreeShipping = ( <div className="shippingItem"></div>  );
+        }
         return(
             <div className="item_element row" >
                 <Link to={`/items/${this.props.id}`}>
-                    <div className="item_element_thumbnail" style={{backgroundImage: 'url('+thumbnail+')'}}></div>  
+                    <img className="img-fluid item_element_thumbnail" src={thumbnail} alt={this.props.title}/>  
                 </Link>  
-                <div className="col-12 col-md-7 col-lg-8">
+                <div className="col-12 col-md-4">
                     <Link to={`/items/${this.props.id}`}>
                         <h3 className="item_element_price">${this.props.price.decimals}</h3>
                         {FreeShipping}
                     </Link>
                     <p className="description"> {this.props.title} </p>
                 </div>
-                <div className="col-12 col-md-1">
+                <div className="col-12 offset-md-2 col-md-2">
                     <small className="address">{this.props.direction}</small>
                 </div>
             </div>
+            
         );
     }
 }
