@@ -3,17 +3,9 @@
 //Import general
 @import '../../index.scss';
 
-header{
+#header{
     background: $primary-color;
     position: relative;
-    &::after{
-        content: '';
-        position: absolute;
-        bottom: 0;
-        width: 100vw;
-        height: 5px;
-        background-color: $gray-dark;
-    }
 }
 .nav_bounds{
     a{

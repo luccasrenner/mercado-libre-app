@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link} from "react-router-dom";
 import './search-box.component.scss';
+
+import styled from 'styled-components'
+
+
 //Import Helmet for head tag maintenance
 import {Helmet} from "react-helmet";
 //SearchBox component
@@ -38,7 +42,7 @@ class SearchBox extends React.Component {
     render(){
         var urlValue = "/items?search="+this.state.textoInput;
         return(
-            <header>
+            <header id="header">
                 <Helmet>
                     <meta charSet="utf-8" />
                     <title>Mercado Libre</title>

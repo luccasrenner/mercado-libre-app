@@ -14,7 +14,7 @@ class SingleItemList extends React.Component{
         return(
             <div className="item_element row" >
                 <Link to={`/items/${this.props.id}`}>
-                    <div className="item_element_thumbnail" style={{backgroundImage: 'url('+thumbnail+')'}}></div>  
+                    <img className="img-fluid item_element_thumbnail" src={thumbnail} alt={this.props.title}/>  
                 </Link>  
                 <div className="col-12 col-md-4">
                     <Link to={`/items/${this.props.id}`}>

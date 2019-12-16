@@ -1,0 +1,22 @@
+{
+  "name": "mercado-libre-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "cd ./front & yarn install & cd ../backend & yarn install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luccasrenner/mercado-libre-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luccasrenner/mercado-libre-app/issues"
+  },
+  "homepage": "https://github.com/luccasrenner/mercado-libre-app#readme",
+  "dependencies": {
+    "styled-components": "^4.4.1"
+  }
+}

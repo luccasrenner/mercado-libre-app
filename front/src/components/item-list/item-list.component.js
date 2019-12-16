@@ -14,7 +14,7 @@ class ItemList extends React.Component{
         }
         //Get URL Search Parameter and execute the API request
         var query = new URLSearchParams(window.location.search).get('search');
-        var url = "http://localhost:3333/api/items?q="+query;
+        var url = "/api/items?q="+query;
         fetch(url)
         .then( results => {
             return results.json();
